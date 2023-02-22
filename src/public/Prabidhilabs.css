@@ -1,0 +1,41 @@
+body {
+    background-image: url("Template.png");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    /* // background-size: 100% 150%; */
+   }
+
+
+@font-face {
+    font-family: Font_family1;
+    src: url(Playlist_Script.ttf);
+}
+
+/* // @font-face {
+//     font-family: Font_family2;
+//     src: url(YesevaOne.ttf);
+// } */
+/* 
+// .Happy {
+//     font-family: Font_family;
+//     font: Playlist_Script1;
+//     font-size: 45px;
+//     color: #F16375;
+//     position: fixed;
+//     bottom: 25;
+//     right: 25;
+//     width: px; */
+
+
+/* // } */
+
+p {
+    /* // // position: absolute;
+    // text-align: center;
+    // font-family: Font_family;
+    // font: Playlist_Script; */
+   
+    font-size: 175px;
+
+    color: #F16375;
+}

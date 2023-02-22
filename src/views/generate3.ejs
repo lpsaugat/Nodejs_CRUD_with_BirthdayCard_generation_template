@@ -1,0 +1,138 @@
+<% include partials/_header %>
+<head>
+<script src= "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+</head>
+<style>
+
+    
+.Happy {
+        margin:3%;
+        position: absolute;  
+
+
+   
+    color: #F16375;
+}
+.img {
+    max-width: 100%;
+    height: auto;
+}
+@font-face {
+    font-family: Font_family1;
+    src: url('../public/Playlist_Script.ttf');
+}
+.txt {
+    position: absolute;
+    font-family: Font_family1;
+    font: Playlist_Script;
+    left: 2%;
+    width: 20;
+    top: 27%;
+    font-size: 4rem;
+    color: #26236a;
+}
+.img2{
+    padding-left: 17rem;
+    padding-top:135%;
+}
+@media only screen and (max-width:1200px){
+    .txt {
+    
+    left: 2%;
+    width: 20;
+    font-size: 3rem;
+}
+
+}
+@media only screen and (max-width:1000px){
+    .txt {
+    
+    left: 2%;
+    width: 20;
+    font-size: 3rem;
+}
+
+}
+@media only screen and (max-width:900px){
+    .txt {
+    
+    left: 2%;
+    
+    font-size: 2.5rem;
+    
+}
+
+}
+@media only screen and (max-width:750px){
+    .txt {
+    
+    left: 2%;
+    
+    font-size: 1.5rem;
+}
+
+}
+@media only screen and (max-width:450px){
+    .txt {
+    
+    left: 2%;
+    
+    font-size: 1rem;
+}
+
+}
+
+
+
+</style>
+
+<body>
+                <div class= 'Happy'>
+                    <div id="photo">
+                    <img = src="../public/Template2.jpg" class="img">
+                    <h1 class="txt">
+
+                        <%= data.name %>
+                        <p id= "demo" class="img2"></p>
+
+                    </h1>
+                    </div>
+                    </div>
+                <div class="container col.5 ">
+                    <button type="button" class="btn btn-outline-dark" onclick="myFunction()">PrabidhiLabs</button>
+                    <button type="button" class="btn btn-outline-dark" onclick="convert()">Screenshot</button>
+                    <div class="result">
+                        <a href=""><button>Download JPG</button>
+                        </a>   
+                </div>
+                </div>           
+             
+                    
+        
+<script type="text/javascript">
+    function myFunction(){
+        document.getElementById("demo").innerHTML = "<img src= '../public/LogoNew.png'>";
+
+    }
+
+    const div = document.querySelector(".Happy");
+        const result = document.querySelector(".result");
+ 
+        function convert() {
+            html2canvas(div).then(function (canvas) {
+                result.appendChild(canvas);
+                let cvs = document.querySelector("canvas");
+                let dataURI = cvs.toDataURL("image/jpeg");
+                let downloadLink = document.querySelector(".result>a");
+                downloadLink.href = dataURI;
+                downloadLink.download = "div2canvasimage.jpg";
+                console.log(dataURI);
+            });
+            result.style.display = "block";
+ 
+        }
+</script>
+                           
+</body>
+
+<% include partials/_footer %>

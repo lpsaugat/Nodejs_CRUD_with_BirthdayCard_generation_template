@@ -1,0 +1,94 @@
+<% include partials/_header %>
+<style>
+    table{
+        max-width: 100%;
+    }
+    div{
+        max-width: 100%;
+    }
+
+@media only screen and (max-width: 450px){
+    
+    .th{
+    display: none;
+    }
+}
+@media only screen and (max-width: 600px){
+    
+    .td{
+    display: none;
+    }
+}
+
+
+</style>
+    </style>
+    
+<div class="container">
+
+    <div class="row">
+        
+        <!-- <div class="container pl-1"> -->
+            <div class="card-body col-md-3" >
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Name" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" placeholder="Address" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" placeholder="Phone" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        save employee
+                    </button>
+                </form>
+                
+                </div>
+                <div class="col-md-3"> <td>
+                    <a href="/generate2/<%= data.id %>" class="btn btn-info">Generate1</a>
+                    <a href="/generate3/<%= data.id %>" class="btn btn-info">Generate2</a>
+                    <a href="/generate4/<%= data.id %>" class="btn btn-info">Generate3</a>
+                </td></div>
+                
+            
+            
+        
+        
+        <div class="col-md-1 row-md-3">
+            <table class="table table-bordered table-hover" >
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td class="td">Address</td>
+                    <td class="th">Phone</td>
+                    <td>Actions</td>
+                </tr>
+                </thead>
+                <tbody>
+            
+                        <tr>
+                            <td><% 1 %></td>
+                            <td><%= data.name %></td>
+                            <td class="td"><%= data.address %></td>
+                            <td class="th"><%= data.phone %></td> 
+                            <td>
+                                <a href="/" class="btn btn-warning">Select Another</a>
+                            </td>
+                        </tr>
+                   
+                
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+    
+</div>
+
+
+<% include partials/_footer %>
